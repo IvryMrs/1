@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Martel Industries</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Martel Sans', sans-serif;
+      background-color: #1c1f2b;
+      color: #f1f1f1;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Cinzel', serif;
+    }
+
+    nav {
+      background-color: #111;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+    }
+
+    header img {
+      width: 90px;
+      margin-bottom: 10px;
+    }
+
+    section {
+      background-color: #2a2e3f;
+      margin: 2rem 0;
+      padding: 2rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.85rem;
+      color: #888;
+    }
+
+    .operations strong {
+      font-size: 1.1rem;
+      display: block;
+      margin-bottom: 0.3rem;
+      color: #fff;
+    }
+
+    /* Martel Glitch Overlay */
+    .secret-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(5, 5, 5, 0.95);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 2s ease;
+    }
+
+    .secret-overlay.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .secret-logo {
+  width: 400px;
+  max-width: 90vw;
+  filter: brightness(1.4) contrast(1.3) drop-shadow(0 0 15px #ff0000cc);
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Martel Glitch Overlay -->
+  <div class="secret-overlay" id="ftcOverlay">
+    <img src="martel-logo.png" alt="Martel Logo" class="secret-logo"> 
+  </div>
+
+  <audio id="glitchSound" src="glitch.mp3" preload="auto"></audio>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="raynald.html">About Raynald</a>
+    <a href="goals.html">Goals</a>
+  </nav>
+
+  <!-- Main Content -->
+  <header>
+    <img src="martel-logo.png" alt="Martel Logo">
+    <h1>Martel Industries</h1>
+    <p>
+      Founded by Raynald, Martel Industries remains a covert cornerstone of European defense innovation, 
+      operating through shadows to reshape the battlefield.
+    </p>
+  </header>
+
+  <section>
+    <h2>Origin</h2>
+    <p>
+      Formed during the aftermath of continental reconstruction, Martel began as a neutral armorer for broken nations. 
+      In the silence of old ruins, it built the future piece by piece. Raynald—visionary, recluse, architect—
+      engineered its foundation, making each division self-sufficient, deniable, and precise.
+    </p>
+  </section>
+
+  <section class="operations">
+    <h2>Divisions & Current Operations</h2>
+    <div>
+      <strong>Applied Sciences</strong>
+      Experimental materials, cybernetics, and human-environment interfaces tested under combat simulations.
+    </div>
+    <div>
+      <strong>Engineering</strong>
+      Development of modular systems—armor, drones, surveillance arrays—all configured for disposal and remanufacture.
+    </div>
+    <div>
+      <strong>Global Surveillance</strong>
+      Data funneling from satellites, AI pattern recognition, and orbital blindspot computation.
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>
+      Martel Industries does not respond to unsolicited inquiries. Should your credentials be recognized, 
+      you will be contacted through secure protocol. Do not attempt to locate us.
+    </p>
+  </section>
+
+  <footer>
+    © 2029 Martel Industries. All rights preserved in silence.
+  </footer>
+
+  <script>
+    const overlay = document.getElementById('ftcOverlay');
+    const glitchSound = document.getElementById('glitchSound');
+
+    window.addEventListener('load', () => {
+      overlay.classList.add('visible');
+      glitchSound.play();
+
+      setTimeout(() => {
+        overlay.classList.remove('visible');
+        glitchSound.pause();
+        glitchSound.currentTime = 0;
+      }, 2000); // 2-second fade in/out
+    });
+  </script>
+</body>
+</html>
